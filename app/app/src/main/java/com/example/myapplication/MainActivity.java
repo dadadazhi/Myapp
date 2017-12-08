@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private String operator;            //操作符：记录 + - * / 符号
     private double n1 , n2 ,Result;     //操作数：操作符两端的数字，n1为左操作数，n2为右操作数。
     private TextView textView;          //文本框：显示计算过程和计算结果
-    private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0;   //按钮：十个数字
+    private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn;   //按钮：十个数字
     private Button btnPlus,btnMinus,btnMultiply,btnDivide;              //按钮：加减乘除
     private Button btnPoint,btnEqual,btnClear;                          //按钮：小数点，等号，清空
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         editText.setText(str + 0);
                         break;
                     }
-                    case R.id.buttonClear://Clear
+                    case R.id.buttonqing://Clear
                     {
                         editText.setText("");
                         textView.setText("");
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     }
-                    case R.id.buttonPlus://操作符+
+                    case R.id.buttonjia://操作符+
                     {
                         str = editText.getText().toString();
                         n1 = Double.parseDouble(str);
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText(MyFormat.format(n1) + operator);
                         break;
                     }
-                    case R.id.buttonMinus://操作符-
+                    case R.id.buttonjian://操作符-
                     {
                         str = editText.getText().toString();
                         n1 = Double.parseDouble(str);
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText(MyFormat.format(n1) + operator);
                         break;
                     }
-                    case R.id.buttonMultiply://操作符*
+                    case R.id.buttoncheng://操作符*
                     {
                         str = editText.getText().toString();
                         n1 = Double.parseDouble(str);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
 
-                    case R.id.buttonDivide://操作符 /
+                    case R.id.buttonchu://操作符 /
                     {
                         str = editText.getText().toString();
                         n1 = Double.parseDouble(str);
@@ -212,14 +212,16 @@ public class MainActivity extends AppCompatActivity {
         btn7 = (Button) findViewById(R.id.button7);
         btn8 = (Button) findViewById(R.id.button8);
         btn9 = (Button) findViewById(R.id.button9);
-        btn0 = (Button) findViewById(R.id.button0);
-        btnPlus = (Button) findViewById(R.id.buttonPlus);
-        btnMinus = (Button) findViewById(R.id.buttonMinus);
-        btnMultiply = (Button) findViewById(R.id.buttonMultiply);
-        btnDivide = (Button) findViewById(R.id.buttonDivide);
-        btnPoint = (Button) findViewById(R.id.buttonPoint);
-        btnEqual = (Button) findViewById(R.id.buttonEqual);
-        btnClear = (Button) findViewById(R.id.buttonClear);
+        btn0 = (Button) findViewById(R.id.buttonjia);
+        btn11= (Button) findViewById(R.id.buttonjian);
+        btn12= (Button) findViewById(R.id.buttoncheng);
+        btn13= (Button) findViewById(R.id.buttondian);
+        btn14= (Button) findViewById(R.id.buttongui);
+        btn15= (Button) findViewById(R.id.buttonchu);
+        btn16= (Button) findViewById(R.id.buttonping);
+        btn17= (Button) findViewById(R.id.buttongeng);
+        btn18= (Button) findViewById(R.id.buttonqing);
+        btn19= (Button) findViewById(R.id.buttonEqual);
         //为按钮添加监听器
         btn1.setOnClickListener(lisenter);
         btn2.setOnClickListener(lisenter);
@@ -231,12 +233,18 @@ public class MainActivity extends AppCompatActivity {
         btn8.setOnClickListener(lisenter);
         btn9.setOnClickListener(lisenter);
         btn0.setOnClickListener(lisenter);
-        btnPlus.setOnClickListener(lisenter);
-        btnMinus.setOnClickListener(lisenter);
-        btnMultiply.setOnClickListener(lisenter);
-        btnDivide.setOnClickListener(lisenter);
-        btnPoint.setOnClickListener(lisenter);
-        btnEqual.setOnClickListener(lisenter);
-        btnClear.setOnClickListener(lisenter);
+        btn10.setOnClickListener(lisenter);
+        btn11.setOnClickListener(lisenter);
+        btn12.setOnClickListener(lisenter);
+        btn13.setOnClickListener(lisenter);
+        btn14.setOnClickListener(lisenter);
+        btn15.setOnClickListener(lisenter);
+        btn16.setOnClickListener(lisenter);
+        btn17.setOnClickListener(lisenter);
+        btn18.setOnClickListener(lisenter);
+        btn19.setOnClickListener(lisenter);
+
+
+
     }
 }
