@@ -8,18 +8,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.text.DecimalFormat;
 
+
 // Edit by Hbu_David 2017.6.15
 // Upgrade to Android Studio 3.0.1 ,Gradle 4.1 ,David 2017.11.24
 
 public class MainActivity extends AppCompatActivity {
     //变量定义
     private EditText editText;          //输入框：用于输入数字
-    private String operator;            //操作符：记录 + - * / 符号
+    private String operator="",s="";            //操作符：记录 + - * / 符号
     private double n1 , n2 ,Result;     //操作数：操作符两端的数字，n1为左操作数，n2为右操作数。
     private TextView textView;          //文本框：显示计算过程和计算结果
-    private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn;   //按钮：十个数字
-    private Button btnPlus,btnMinus,btnMultiply,btnDivide;              //按钮：加减乘除
-    private Button btnPoint,btnEqual,btnClear;                          //按钮：小数点，等号，清空
+    private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19;   //按钮：十个数字
+
 
     private View.OnClickListener lisenter = new View.OnClickListener() {//侦听器
         @Override
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.button9://9
                     {
+
                         editText.setText(editText.getText().toString() +  9);
                         break;
                     }
@@ -90,10 +91,35 @@ public class MainActivity extends AppCompatActivity {
                     {
                         editText.setText("");
                         textView.setText("");
+                        s="";
                         Result = 0;
+                        operator="";
+                        n1=0;
+                        n2=0;
                         break;
                     }
-                    case R.id.buttonPoint://.
+                    case R.id.buttongui:
+                    {
+                        editText.setText("");
+                        break;
+                    }
+                    case R.id.buttonping:
+                    {
+                        str = editText.getText().toString();
+                        n1 = Double.parseDouble(str);
+                        editText.setText(MyFormat.format(n1*n1));
+                        break;
+                    }
+                    case R.id.buttongeng:
+                    {
+                        str = editText.getText().toString();
+                        n1 = Double.parseDouble(str);
+                        editText.setText(MyFormat.format(Math.sqrt(n1)));
+
+                        break;
+                    }
+
+                    case R.id.buttondian://.
                     {
                         str = editText.getText().toString();
                         if(str.indexOf(".") != -1) //判断字符串中是否已包含小数点，如果有，就什么也不做
@@ -111,39 +137,288 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttonjia://操作符+
                     {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
-                        operator = "+";
-                        editText.setText("");
-                        textView.setText(MyFormat.format(n1) + operator);
+                        if(s=="")
+                        {
+                            str = editText.getText().toString();
+                            n1 = Double.parseDouble(str);
+                        }
+                        else
+                        {
+                            n1=Double.parseDouble(s);
+                        }
+                        if(operator=="")
+                        {
+                            operator = "+";
+                            s=editText.getText().toString();
+                            textView.setText(editText.getText().toString() + operator);
+                            editText.setText("");
+                        }
+                        else
+                        {
+                            if(operator == "+")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 + n2;
+                                operator = "+";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "-")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 - n2;
+                                operator = "+";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "*")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 * n2;
+                                operator = "+";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "/")
+                            {
+                                operator = "+";
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                if(n2 == 0)
+                                {
+                                    editText.setText("");
+                                    textView.setText("除数不能为0");
+                                    break;
+                                }
+                                else
+                                {
+                                    Result = n1 / n2;
+                                    s=MyFormat.format(Result);
+                                    textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                    editText.setText("");
+                                }
+                            }
+                        }
                         break;
                     }
                     case R.id.buttonjian://操作符-
                     {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
+                        if(s=="")
+                        {
+                            str = editText.getText().toString();
+                            n1 = Double.parseDouble(str);
+                        }
+                        else
+                        {
+                            n1=Double.parseDouble(s);
+                        }
+                        if(operator=="")
+                        {
                         operator = "-";
-                        editText.setText("");
-                        textView.setText(MyFormat.format(n1) + operator);
+                            s=editText.getText().toString();
+                            textView.setText(editText.getText().toString() + operator);
+                            editText.setText("");}
+                         else
+                        {
+                            if(operator == "+")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 + n2;
+                                s=MyFormat.format(Result);
+                                operator = "-";
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "-")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 - n2;
+                                s=MyFormat.format(Result);
+                                operator = "-";
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "*")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 * n2;
+                                s=MyFormat.format(Result);
+                                operator = "-";
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "/")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                operator = "-";
+                                if(n2 == 0)
+                                {
+                                    editText.setText("");
+                                    textView.setText("除数不能为0");
+                                    break;
+                                }
+                                else
+                                {
+                                    Result = n1 / n2;
+                                    s=MyFormat.format(Result);
+                                    textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                    editText.setText("");
+                                }
+                            }
+                        }
                         break;
                     }
                     case R.id.buttoncheng://操作符*
                     {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
-                        operator = "*";
-                        editText.setText("");
-                        textView.setText(MyFormat.format(n1) + operator);
+                        if(s=="")
+                        {
+                            str = editText.getText().toString();
+                            n1 = Double.parseDouble(str);
+                        }
+                        else
+                        {
+                            n1=Double.parseDouble(s);
+                        }
+                        if(operator=="")
+                        {
+                            operator = "*";
+                            s=editText.getText().toString();
+                            textView.setText(editText.getText().toString() + operator);
+                            editText.setText("");}
+                        else
+                        {
+                            if(operator == "+")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 + n2;
+                                operator = "*";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "-")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 - n2;
+                                operator = "*";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "*")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 * n2;
+                                operator = "*";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "/")
+                            {
+                                operator = "*";
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                if(n2 == 0)
+                                {
+                                    editText.setText("");
+                                    textView.setText("除数不能为0");
+                                    break;
+                                }
+                                else
+                                {
+                                    Result = n1 / n2;
+                                    s=MyFormat.format(Result);
+                                    textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                    editText.setText("");
+                                }
+                            }
+                        }
                         break;
                     }
 
                     case R.id.buttonchu://操作符 /
                     {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
-                        operator = "/";
-                        editText.setText("");
-                        textView.setText(MyFormat.format(n1) + operator);
+                        if(s=="")
+                        {
+                            str = editText.getText().toString();
+                            n1 = Double.parseDouble(str);
+                        }
+                        else
+                        {
+                            n1=Double.parseDouble(s);
+                        }
+                        if(operator=="")
+                        {
+                            operator = "/";
+                            s=editText.getText().toString();
+                            textView.setText(editText.getText().toString() + operator);
+                            editText.setText("");}
+                        else
+                        {
+                            if(operator == "+")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 + n2;
+                                operator = "/";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "-")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 - n2;
+                                operator = "/";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "*")
+                            {
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                Result = n1 * n2;
+                                operator = "/";
+                                s=MyFormat.format(Result);
+                                textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                editText.setText("");
+                            }
+                            else if(operator == "/")
+                            {
+                                operator = "/";
+                                str = editText.getText().toString();
+                                n2 = Double.parseDouble(str);
+                                if(n2 == 0)
+                                {
+                                    editText.setText("");
+                                    textView.setText("除数不能为0");
+                                    break;
+                                }
+                                else
+                                {
+                                    Result = n1 / n2;
+                                    s=MyFormat.format(Result);
+                                    textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
+                                    editText.setText("");
+                                }
+                            }
+                        }
                         break;
                     }
                     case R.id.buttonEqual://操作符=
@@ -152,30 +427,34 @@ public class MainActivity extends AppCompatActivity {
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
+                            n1=Double.parseDouble(s);
                             Result = n1 + n2;
-                            textView.setText(MyFormat.format(n1) + operator + MyFormat.format(n2) + "=" + MyFormat.format(Result) );
+                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
                         }
                         else if(operator == "-")
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
+                            n1=Double.parseDouble(s);
                             Result = n1 - n2;
-                            textView.setText(MyFormat.format(n1) + operator + MyFormat.format(n2) + "="+MyFormat.format(Result));
+                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
                         }
                         else if(operator == "*")
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
+                            n1=Double.parseDouble(s);
                             Result = n1 * n2;
-                            textView.setText(MyFormat.format(n1) + operator + MyFormat.format(n2) + "="+MyFormat.format(Result));
+                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
                         }
                         else if(operator == "/")
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
+                            n1=Double.parseDouble(s);
                             if(n2 == 0)
                             {
                                 editText.setText("");
@@ -185,7 +464,7 @@ public class MainActivity extends AppCompatActivity {
                             else
                             {
                                 Result = n1 / n2;
-                                textView.setText(MyFormat.format(n1) + operator + MyFormat.format(n2) + "="+MyFormat.format(Result));
+                                textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                                 editText.setText(MyFormat.format(Result)+"");
                             }
                         }
@@ -195,14 +474,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
             }catch(Exception e){}
+
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //获取按钮的id
+        btn0 = (Button) findViewById(R.id.button0);
         btn1 = (Button) findViewById(R.id.button1);
         btn2 = (Button) findViewById(R.id.button2);
         btn3 = (Button) findViewById(R.id.button3);
@@ -212,7 +494,7 @@ public class MainActivity extends AppCompatActivity {
         btn7 = (Button) findViewById(R.id.button7);
         btn8 = (Button) findViewById(R.id.button8);
         btn9 = (Button) findViewById(R.id.button9);
-        btn0 = (Button) findViewById(R.id.buttonjia);
+        btn10 = (Button) findViewById(R.id.buttonjia);
         btn11= (Button) findViewById(R.id.buttonjian);
         btn12= (Button) findViewById(R.id.buttoncheng);
         btn13= (Button) findViewById(R.id.buttondian);

@@ -9,14 +9,14 @@
         android:layout_height="60dp"
         android:gravity="right"
         android:textSize="30sp"
-        android:text="TEXT"/>
+        android:text=""/>
     <EditText
         android:id="@+id/editviewdavid"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:gravity="right"
         android:textSize="30sp"
-        android:hint="Edit"
+        android:hint=""
         android:textCursorDrawable="@null"
 
         />
@@ -160,7 +160,7 @@
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="←" />
+            android:text="E" />
 
         <Button
             android:id="@+id/buttonchu"
@@ -181,7 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="25sp"
-            android:text="2" />
+            android:text="²" />
 
         <Button
             android:id="@+id/buttongeng"
