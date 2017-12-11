@@ -431,6 +431,10 @@ public class MainActivity extends AppCompatActivity {
                             Result = n1 + n2;
                             textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
+                            operator="";
+                            s="";
+
+
                         }
                         else if(operator == "-")
                         {
@@ -440,6 +444,8 @@ public class MainActivity extends AppCompatActivity {
                             Result = n1 - n2;
                             textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
+                            operator="";
+                            s="";
                         }
                         else if(operator == "*")
                         {
@@ -449,6 +455,8 @@ public class MainActivity extends AppCompatActivity {
                             Result = n1 * n2;
                             textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                             editText.setText(MyFormat.format(Result)+"");
+                            operator="";
+                            s="";
                         }
                         else if(operator == "/")
                         {
@@ -466,6 +474,8 @@ public class MainActivity extends AppCompatActivity {
                                 Result = n1 / n2;
                                 textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
                                 editText.setText(MyFormat.format(Result)+"");
+                                operator="";
+                                s="";
                             }
                         }
                         break;
