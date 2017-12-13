@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     //变量定义
-    private EditText editText;          //输入框：用于输入数字
+    private EditText editText;
     private String operator="",s="";            //操作符：记录 + - * / 符号
     private double n1 , n2 ,Result;     //操作数：操作符两端的数字，n1为左操作数，n2为右操作数。
     private TextView textView;          //文本框：显示计算过程和计算结果
