@@ -38,28 +38,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="25sp"
-            android:text="1" />
+            android:text="1"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:textSize="25sp"
             android:layout_height="match_parent"
-            android:text="2" />
+            android:text="2"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:textSize="25sp"
             android:layout_height="match_parent"
-            android:text="3" />
+            android:text="3"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttonjia"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="25sp"
-            android:text="+" />
+            android:text="+"
+            android:background="@drawable/bt_shape" />
 
     </TableRow>
 
@@ -74,28 +78,32 @@
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="4" />
+            android:text="4"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button5"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="5" />
+            android:text="5"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button6"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="6" />
+            android:text="6"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttonjian"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="-" />
+            android:text="-"
+            android:background="@drawable/bt_shape" />
 
     </TableRow>
 
@@ -110,28 +118,32 @@
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="7" />
+            android:text="7"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button8"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="8" />
+            android:text="8"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="9"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttoncheng"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="*" />
+            android:text="*"
+            android:background="@drawable/bt_shape" />
 
     </TableRow>
 
@@ -146,28 +158,33 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="25sp"
-            android:text="." />
+            android:text="."
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/button0"
             android:layout_width="wrap_content"
             android:textSize="25sp"
             android:layout_height="match_parent"
-            android:text="0" />
+            android:text="0"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttongui"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="E" />
+            android:text="E"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttonchu"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="/" />
+            android:text="/"
+            android:background="@drawable/bt_shape"
+            />
 
     </TableRow>
     <TableRow
@@ -181,28 +198,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="25sp"
-            android:text="²" />
+            android:text="²"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttongeng"
             android:layout_width="wrap_content"
             android:textSize="25sp"
             android:layout_height="match_parent"
-            android:text="√" />
+            android:text="√"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttonqing"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="C" />
+            android:text="C"
+            android:background="@drawable/bt_shape" />
 
         <Button
             android:id="@+id/buttonEqual"
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="=" />
+            android:text="="
+            android:background="@drawable/bt_shape" />
 
     </TableRow>
 
