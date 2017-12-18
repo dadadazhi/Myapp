@@ -98,27 +98,11 @@ public class MainActivity extends AppCompatActivity {
                         n2=0;
                         break;
                     }
-                    case R.id.buttongui:
+                    case R.id.buttontui:
                     {
                         editText.setText("");
                         break;
                     }
-                    case R.id.buttonping:
-                    {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
-                        editText.setText(MyFormat.format(n1*n1));
-                        break;
-                    }
-                    case R.id.buttongeng:
-                    {
-                        str = editText.getText().toString();
-                        n1 = Double.parseDouble(str);
-                        editText.setText(MyFormat.format(Math.sqrt(n1)));
-
-                        break;
-                    }
-
                     case R.id.buttondian://.
                     {
                         str = editText.getText().toString();
@@ -508,12 +492,11 @@ public class MainActivity extends AppCompatActivity {
         btn11= (Button) findViewById(R.id.buttonjian);
         btn12= (Button) findViewById(R.id.buttoncheng);
         btn13= (Button) findViewById(R.id.buttondian);
-        btn14= (Button) findViewById(R.id.buttongui);
+        btn14= (Button) findViewById(R.id.buttontui);
         btn15= (Button) findViewById(R.id.buttonchu);
-        btn16= (Button) findViewById(R.id.buttonping);
-        btn17= (Button) findViewById(R.id.buttongeng);
-        btn18= (Button) findViewById(R.id.buttonqing);
-        btn19= (Button) findViewById(R.id.buttonEqual);
+        btn16= (Button) findViewById(R.id.buttonbian);
+        btn17= (Button) findViewById(R.id.buttonqing);
+        btn18= (Button) findViewById(R.id.buttonEqual);
         //为按钮添加监听器
         btn1.setOnClickListener(lisenter);
         btn2.setOnClickListener(lisenter);
@@ -534,7 +517,7 @@ public class MainActivity extends AppCompatActivity {
         btn16.setOnClickListener(lisenter);
         btn17.setOnClickListener(lisenter);
         btn18.setOnClickListener(lisenter);
-        btn19.setOnClickListener(lisenter);
+
 
 
 
