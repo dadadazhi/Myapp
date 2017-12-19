@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttontui:
                     {
-                        editText.setText("");
+                        editText.setText(editText.getText().toString().substring(0,editText.getText().toString().length()-1));
                         break;
                     }
                     case R.id.buttondian://.
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "*")
+                            else if(operator == "×")
                             {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "/")
+                            else if(operator == "÷")
                             {
                                 operator = "+";
                                 str = editText.getText().toString();
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "*")
+                            else if(operator == "×")
                             {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "/")
+                            else if(operator == "÷")
                             {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if(operator=="")
                         {
-                            operator = "*";
+                            operator = "×";
                             s=editText.getText().toString();
                             textView.setText(editText.getText().toString() + operator);
                             editText.setText("");}
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 + n2;
-                                operator = "*";
+                                operator = "×";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 - n2;
-                                operator = "*";
+                                operator = "×";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
@@ -306,14 +306,14 @@ public class MainActivity extends AppCompatActivity {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 * n2;
-                                operator = "*";
+                                operator = "×";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "/")
+                            else if(operator == "÷")
                             {
-                                operator = "*";
+                                operator = "×";
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 if(n2 == 0)
@@ -347,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if(operator=="")
                         {
-                            operator = "/";
+                            operator = "÷";
                             s=editText.getText().toString();
                             textView.setText(editText.getText().toString() + operator);
                             editText.setText("");}
@@ -358,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 + n2;
-                                operator = "/";
+                                operator = "÷";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
@@ -368,24 +368,24 @@ public class MainActivity extends AppCompatActivity {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 - n2;
-                                operator = "/";
+                                operator = "÷";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "*")
+                            else if(operator == "×")
                             {
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 Result = n1 * n2;
-                                operator = "/";
+                                operator = "÷";
                                 s=MyFormat.format(Result);
                                 textView.setText(textView.getText().toString() +editText.getText().toString() + operator  );
                                 editText.setText("");
                             }
-                            else if(operator == "/")
+                            else if(operator == "÷")
                             {
-                                operator = "/";
+                                operator = "÷";
                                 str = editText.getText().toString();
                                 n2 = Double.parseDouble(str);
                                 if(n2 == 0)
@@ -413,8 +413,8 @@ public class MainActivity extends AppCompatActivity {
                             n2 = Double.parseDouble(str);
                             n1=Double.parseDouble(s);
                             Result = n1 + n2;
-                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
-                            editText.setText(MyFormat.format(Result)+"");
+                            textView.setText(textView.getText().toString()  + editText.getText().toString() +  MyFormat.format(Result) );
+                            editText.setText("=" +MyFormat.format(Result)+"");
                             operator="";
                             s="";
 
@@ -431,7 +431,7 @@ public class MainActivity extends AppCompatActivity {
                             operator="";
                             s="";
                         }
-                        else if(operator == "*")
+                        else if(operator == "×")
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
@@ -442,7 +442,7 @@ public class MainActivity extends AppCompatActivity {
                             operator="";
                             s="";
                         }
-                        else if(operator == "/")
+                        else if(operator == "÷")
                         {
                             str = editText.getText().toString();
                             n2 = Double.parseDouble(str);
