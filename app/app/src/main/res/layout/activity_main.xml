@@ -16,9 +16,8 @@
         android:layout_height="90dp"
         android:gravity="right"
         android:textSize="30sp"
-        android:textCursorDrawable="@null"
         android:background="@null"
-
+        android:textCursorDrawable="@null"
         />
 
 
@@ -35,6 +34,7 @@
             android:layout_height="match_parent"
             android:textSize="20sp"
             android:text="C"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -43,6 +43,7 @@
             android:textSize="20sp"
             android:layout_height="match_parent"
             android:text="±"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -51,6 +52,7 @@
             android:textSize="20sp"
             android:layout_height="match_parent"
             android:text="←"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -75,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="7"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -83,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="8"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -91,6 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="9"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -115,6 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="4"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -123,6 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="5"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -130,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="6"
+            android:textColor="#000"
             android:textSize="20sp"
             android:background="@drawable/bt_shape" />
 
@@ -155,6 +163,7 @@
             android:layout_height="match_parent"
             android:textSize="20sp"
             android:text="1"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -163,6 +172,7 @@
             android:textSize="20sp"
             android:layout_height="match_parent"
             android:text="2"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -171,6 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="3"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -196,6 +207,7 @@
             android:textSize="20sp"
             android:layout_span="2"
             android:text="0"
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
@@ -204,6 +216,7 @@
             android:textSize="20sp"
             android:layout_height="match_parent"
             android:text="."
+            android:textColor="#000"
             android:background="@drawable/bt_shape" />
 
         <Button
