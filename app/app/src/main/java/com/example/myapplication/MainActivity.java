@@ -103,6 +103,18 @@ public class MainActivity extends AppCompatActivity {
                         editText.setText(editText.getText().toString().substring(0,editText.getText().toString().length()-1));
                         break;
                     }
+                    case R.id.buttonbian:
+                    {   if(editText.getText().toString().subSequence(0, 1).equals("-"))
+                        {
+                            editText.setText(editText.getText().toString().substring(1,editText.getText().toString().length()));
+                        }
+                        else
+                        {
+                            editText.setText("-"+editText.getText().toString());
+                        }
+
+                        break;
+                    }
                     case R.id.buttondian://.
                     {
                         str = editText.getText().toString();
@@ -413,7 +425,7 @@ public class MainActivity extends AppCompatActivity {
                             n2 = Double.parseDouble(str);
                             n1=Double.parseDouble(s);
                             Result = n1 + n2;
-                            textView.setText(textView.getText().toString()  + editText.getText().toString() +  MyFormat.format(Result) );
+                            textView.setText(textView.getText().toString()  + editText.getText().toString()  );
                             editText.setText("=" +MyFormat.format(Result)+"");
                             operator="";
                             s="";
@@ -426,8 +438,8 @@ public class MainActivity extends AppCompatActivity {
                             n2 = Double.parseDouble(str);
                             n1=Double.parseDouble(s);
                             Result = n1 - n2;
-                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
-                            editText.setText(MyFormat.format(Result)+"");
+                            textView.setText(textView.getText().toString()  + editText.getText().toString()   );
+                            editText.setText("=" +MyFormat.format(Result)+"");
                             operator="";
                             s="";
                         }
@@ -437,8 +449,8 @@ public class MainActivity extends AppCompatActivity {
                             n2 = Double.parseDouble(str);
                             n1=Double.parseDouble(s);
                             Result = n1 * n2;
-                            textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
-                            editText.setText(MyFormat.format(Result)+"");
+                            textView.setText(textView.getText().toString()  + editText.getText().toString()  );
+                            editText.setText("=" +MyFormat.format(Result)+"");
                             operator="";
                             s="";
                         }
@@ -456,8 +468,8 @@ public class MainActivity extends AppCompatActivity {
                             else
                             {
                                 Result = n1 / n2;
-                                textView.setText(textView.getText().toString()  + editText.getText().toString() + "=" + MyFormat.format(Result) );
-                                editText.setText(MyFormat.format(Result)+"");
+                                textView.setText(textView.getText().toString()  + editText.getText().toString()  );
+                                editText.setText("=" +MyFormat.format(Result)+"");
                                 operator="";
                                 s="";
                             }
