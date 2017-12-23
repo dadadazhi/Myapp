@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.text.DecimalFormat;
 
 
@@ -257,8 +259,9 @@ public class MainActivity extends AppCompatActivity {
                                 n2 = Double.parseDouble(str);
                                 if(n2 == 0)
                                 {
-                                    editText.setText("");
-                                    textView.setText("除数不能为0");
+                                    textView.setText(textView.getText().toString()  + editText.getText().toString());
+                                    editText.setText("=∞");
+                                    Toast.makeText(getApplicationContext(),"除数不能为零",Toast.LENGTH_LONG).show();
                                     break;
                                 }
                                 else
@@ -334,8 +337,9 @@ public class MainActivity extends AppCompatActivity {
                                 operator = "-";
                                 if(n2 == 0)
                                 {
-                                    editText.setText("");
-                                    textView.setText("除数不能为0");
+                                    textView.setText(textView.getText().toString()  + editText.getText().toString());
+                                    editText.setText("=∞");
+                                    Toast.makeText(getApplicationContext(),"除数不能为零",Toast.LENGTH_LONG).show();
                                     break;
                                 }
                                 else
@@ -411,8 +415,9 @@ public class MainActivity extends AppCompatActivity {
                                 n2 = Double.parseDouble(str);
                                 if(n2 == 0)
                                 {
-                                    editText.setText("");
-                                    textView.setText("除数不能为0");
+                                    textView.setText(textView.getText().toString()  + editText.getText().toString());
+                                    editText.setText("=∞");
+                                    Toast.makeText(getApplicationContext(),"除数不能为零",Toast.LENGTH_LONG).show();
                                     break;
                                 }
                                 else
@@ -488,8 +493,9 @@ public class MainActivity extends AppCompatActivity {
                                 n2 = Double.parseDouble(str);
                                 if(n2 == 0)
                                 {
-                                    editText.setText("");
-                                    textView.setText("除数不能为0");
+                                    textView.setText(textView.getText().toString()  + editText.getText().toString());
+                                    editText.setText("=∞");
+                                    Toast.makeText(getApplicationContext(),"除数不能为零",Toast.LENGTH_LONG).show();
                                     break;
                                 }
                                 else
@@ -547,8 +553,9 @@ public class MainActivity extends AppCompatActivity {
                             n1=Double.parseDouble(s);
                             if(n2 == 0)
                             {
-                                editText.setText("");
-                                textView.setText("除数不能为0");
+                                textView.setText(textView.getText().toString()  + editText.getText().toString());
+                                editText.setText("=∞");
+                                Toast.makeText(getApplicationContext(),"除数不能为零",Toast.LENGTH_LONG).show();
                                 break;
                             }
                             else

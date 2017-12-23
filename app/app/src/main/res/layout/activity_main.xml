@@ -2,7 +2,8 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:stretchColumns="*"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/zm">
     <TextView
         android:id="@+id/textviewdavid"
         android:layout_width="wrap_content"
@@ -11,7 +12,7 @@
         android:textSize="60sp"
         android:textColor="#000"
         android:text=""
-        android:background="#FFF"/>
+        android:background="@null"/>
     <EditText
         android:id="@+id/editviewdavid"
         android:layout_width="wrap_content"
@@ -19,7 +20,7 @@
         android:gravity="right"
         android:textSize="60sp"
         android:textColor="#000"
-        android:background="#FFF"
+        android:background="@null"
         android:textCursorDrawable="@null"
         />
 
