@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private double n1 , n2 ,Result;     //操作数：操作符两端的数字，n1为左操作数，n2为右操作数。
     private TextView textView;          //文本框：显示计算过程和计算结果
     private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19;   //按钮：十个数字
-
+    private boolean aBoolean =true;
 
     private View.OnClickListener lisenter = new View.OnClickListener() {//侦听器
         @Override
@@ -35,53 +35,104 @@ public class MainActivity extends AppCompatActivity {
                 switch(button.getId())//获取点击按钮的ID，通过ID选择对应的选项执行
                 {
                     case R.id.button1://如果点击了按钮：“1”
-                    {
+                    {   if(!aBoolean)
+                        {
+                            editText.setText("");
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         editText.setText(editText.getText().toString() + 1);//输入框末尾，添加一个“1”
                         break;
                     }
                     case R.id.button2://2
                     {
+                        if(!aBoolean)
+                        {
+                            editText.setText("");
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         editText.setText(editText.getText().toString() + 2);
                         break;
                     }
                     case R.id.button3://3
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() + 3);
                         break;
                     }
                     case R.id.button4://4
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() + + 4);
                         break;
                     }
                     case R.id.button5://5
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() + 5);
                         break;
                     }
                     case R.id.button6://6
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() +  6);
                         break;
                     }
                     case R.id.button7://7
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() +  7);
                         break;
                     }
                     case R.id.button8://8
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         editText.setText(editText.getText().toString() +   8);
                         break;
                     }
                     case R.id.button9://9
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
 
                         editText.setText(editText.getText().toString() +  9);
                         break;
                     }
                     case R.id.button0://0
+                    {   if(!aBoolean)
                     {
+                        editText.setText("");
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         str = editText.getText().toString();
                         //此处可以考虑添加代码，限制用户输入00,000等 2017.6.15
                         editText.setText(str + 0);
@@ -104,6 +155,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.buttonbian:
+                        if(!aBoolean)
+                        {
+                            editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                     {   if(editText.getText().toString().subSequence(0, 1).equals("-"))
                         {
                             editText.setText(editText.getText().toString().substring(1,editText.getText().toString().length()));
@@ -117,6 +174,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttondian://.
                     {
+                        if(!aBoolean)
+                        {
+                            editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         str = editText.getText().toString();
                         if(str.indexOf(".") != -1) //判断字符串中是否已包含小数点，如果有，就什么也不做
                         {}
@@ -133,6 +196,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttonjia://操作符+
                     {
+                        if(!aBoolean)
+                        {
+                            editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         if(s=="")
                         {
                             str = editText.getText().toString();
@@ -205,6 +274,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttonjian://操作符-
                     {
+                        if(!aBoolean)
+                        {
+                            editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         if(s=="")
                         {
                             str = editText.getText().toString();
@@ -276,6 +351,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.buttoncheng://操作符*
                     {
+                        if(!aBoolean)
+                        {
+                            editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                            textView.setText("");
+                            aBoolean=true;
+                        }
                         if(s=="")
                         {
                             str = editText.getText().toString();
@@ -347,7 +428,12 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case R.id.buttonchu://操作符 /
+                    {   if(!aBoolean)
                     {
+                        editText.setText(editText.getText().toString().subSequence(1, editText.getText().toString().length()));
+                        textView.setText("");
+                        aBoolean=true;
+                    }
                         if(s=="")
                         {
                             str = editText.getText().toString();
@@ -474,6 +560,7 @@ public class MainActivity extends AppCompatActivity {
                                 s="";
                             }
                         }
+                        aBoolean=false;
                         break;
                     }
                     default:
